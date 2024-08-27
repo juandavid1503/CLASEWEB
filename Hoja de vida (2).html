@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoja de Vida</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: grey;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: whitesmoke;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-info i {
+      color: #whitesmoke;
+      margin-right: 10px;
+    }
+
+    .job-experience, .education {
+      margin-bottom: 20px;
+    }
+
+    .job-experience h3, .education h3 {
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .job-experience p, .education p {
+      margin: 0;
+    }
+
+    img {
+      height: 200px;
+      width: 200px;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 200px;
+    }
+
+    .navigation button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section active">
+      <h1>Datos personales</h1>
+      <img src="fabiana.jpg">
+      <div class="contact-info">
+       <div><i class="fa fa-phone"></h> Fabiana Rojas</div>
+        <div><i class="fa fa-phone"></h> 
+      fabianarojas15@gmail.com</div>
+        <div><i class="fa fa-phone"></h> +57 3115987354</div>
+        <div><i class="fa fa-map-marker"></h> chia, Cundinamarca</div>
+      </div>
+      <h2>Perfil</h2>
+      <p>Fisioterapeuta con más de 5 años de experiencia en la evaluación, diagnóstico y tratamiento de condiciones musculoesqueléticas, neurológicas y cardiorrespiratorias. Especializado en fisioterapia deportiva y rehabilitación postoperatoria, con un enfoque en la recuperación funcional y la prevención de lesiones.</p>
+    </div>
+
+    <div class="section">
+      <h2>Educación</h2>
+      <div class="education">
+        <h3> bachiller - la presentacion</h3>
+      </div>
+      <div class="education">
+       <h3></h3>
+      </div>
+      <div class="education">
+       <h3>fisioterapia . universidad rosario</h3>
+      </div>
+      <div class="education">
+       <h3>especializacion en terapia deportiva - los andes</h3>
+      </div>
+      <div class="education">
+       <h3>ingles - colombo</h3>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Experiencia Laboral</h2>
+      <div class="job-experience">
+        <h3>Clínica RehabilitaMed</h3>
+        <p>2015</p>
+        <p>Tratamiento y rehabilitación de atletas con lesiones deportivas, incluyendo esguinces, fracturas, desgarros musculares y rehabilitación postoperatoria.</p>
+      </div>
+      <div class="job-experience">
+        <h3>Hospital Santa clara</h3>
+        <p>2018- 2020</p>
+        <p>Elaboración de programas de rehabilitación individualizados, con enfoque en la mejora de la movilidad y el alivio del dolor.</p>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <button id="personalBtn">Datos Personales</button>
+      <button id="educacionBtn">Educación</button>
+      <button id="experienciaBtn">Experiencia</button>
+    </div>
+  </div>
+
+  <script>
+    // Obtener los elementos de los botones
+    const personalBtn = document.getElementById('personalBtn');
+    const educacionBtn = document.getElementById('educacionBtn');
+    const experienciaBtn = document.getElementById('experienciaBtn');
+
+    // Obtener todas las secciones de la hoja de vida
+    const sections = document.querySelectorAll('.section');
+
+    // Función para mostrar la sección correspondiente
+    function showSection(index) {
+      sections.forEach((section, i) => {
+        if (i === index) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+    }
+
+    // Eventos de clic para los botones
+    personalBtn.addEventListener('click', () => {
+      showSection(0);
+    });
+
+    educacionBtn.addEventListener('click', () => {
+      showSection(1);
+    });
+
+    experienciaBtn.addEventListener('click', () => {
+      showSection(2);
+    });
+
+    // Mostrar la primera sección por defecto
+    showSection(0);
+  </script>
+</body>
+</html>
